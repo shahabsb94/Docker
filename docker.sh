@@ -26,3 +26,12 @@ dnf install docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-co
 systemctl start docker
 systemctl enable docker
 usermod -aG docker ec2-user
+
+
+# kubens for making expense as default namespace
+sudo git clone https://github.com/ahmetb/kubectx /opt/kubectx
+sudo ln -s /opt/kubectx/kubectx /usr/local/bin/kubectx
+sudo ln -s /opt/kubectx/kubens /usr/local/bin/kubens
+
+#kubek9s for user interface
+curl -sS https://webinstall.dev/k9s | bash
